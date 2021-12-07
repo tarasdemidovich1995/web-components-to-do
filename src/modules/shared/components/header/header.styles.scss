@@ -1,0 +1,57 @@
+@import '../../../../styles/mixins/themes.scss';
+@import '../../../../styles/variables/colors.scss';
+
+.app-header {
+    width: 100%;
+    display: flex;
+    padding: 20px 40px;
+    transition: 0.3s background-color ease-in-out;
+    justify-content: space-between;
+
+    &__nav {
+        display: flex;
+    }
+
+    &__nav-elem {
+        transition: 0.3s color ease-in-out;
+        padding: 0 10px;
+        margin: 0 10px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 1px;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        &_active::before {
+            width: 100%;
+        }
+    }
+}
+
+@include dark-theme('.app-header') {
+    background-color: $dark-bg-color-1;
+    color: $dark-text-color-1;
+
+    &__nav-elem::before {
+        background-color: $dark-text-color-1;
+    }
+}
+
+@include light-theme('.app-header') {
+    background-color: $white-bg-color-1;
+    color: $white-text-color-1;
+
+    &__nav-elem::before {
+        background-color: $white-text-color-1;
+    }
+}

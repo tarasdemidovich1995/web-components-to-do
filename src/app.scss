@@ -1,0 +1,28 @@
+@import './styles/mixins/themes.scss';
+@import './styles/variables/colors.scss';
+
+.app {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+    &__content {
+        flex-grow: 1;
+        padding: 40px;
+        transition: 0.3s ease-in-out;
+    }
+}
+
+@include dark-theme('.app') {
+    &__content {
+        background-color: $dark-bg-color-3;
+    }
+}
+
+@include light-theme('.app') {
+    &__content {
+        background-color: $white-bg-color-3;
+    }
+}

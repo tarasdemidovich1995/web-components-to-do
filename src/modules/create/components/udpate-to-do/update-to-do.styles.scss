@@ -1,0 +1,56 @@
+@import '../../../../styles/mixins/themes.scss';
+@import '../../../../styles/variables/colors.scss';
+
+.update-to-do {
+    display: flex;
+
+    &__field {
+        flex-grow: 1;
+    }
+
+    &__input {
+        font: inherit;
+        padding: 14px 32px;
+        width: 100%;
+        background: $color-white;
+        border: 1px solid;
+        border-right: 0;
+        outline: 0;
+        box-sizing: border-box;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    &__add-btn {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border: 0;
+        outline: 0;
+        transition: 0.3s background-color ease-in-out;
+        padding: 0 32px;
+        height: 55px;
+        color: $color-white;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
+
+@include dark-theme('.update-to-do') {
+    &__add-btn {
+        background-color: $dark-bg-color-2;
+    }
+
+    &__input {
+        border-color: $dark-bg-color-2;
+    }
+}
+
+@include light-theme('.update-to-do') {
+    &__add-btn {
+        background-color: $white-bg-color-2;
+    }
+
+    &__input {
+        border-color: $white-bg-color-2;
+    }
+}

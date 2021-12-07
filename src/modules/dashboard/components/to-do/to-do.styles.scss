@@ -1,0 +1,50 @@
+@import '../../../../styles/mixins/themes.scss';
+@import '../../../../styles/variables/colors.scss';
+
+.to-do {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 32px;
+    height: 55px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+
+    &__name {
+        &_completed {
+            text-decoration: line-through;
+        }
+    }
+
+    &__icon {
+        user-select: none;
+        cursor: pointer;
+        
+        &:not(:last-child) {
+            margin-right: 10px;
+        } 
+    }
+
+    &__icon, &__name {
+        transition: 0.3s ease-in-out;
+    }
+}
+
+
+@include dark-theme('.to-do') {
+    background-color: $dark-bg-color-1;
+    
+    &__name, &__icon {
+        color: $dark-text-color-1;
+    }
+}
+
+@include light-theme('.to-do') {
+    background-color: $white-bg-color-1;
+    
+    &__name, &__icon {
+        color: $white-text-color-1;
+    }
+}

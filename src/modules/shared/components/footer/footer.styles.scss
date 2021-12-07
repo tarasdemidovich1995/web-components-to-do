@@ -1,0 +1,34 @@
+@import '../../../../styles/mixins/themes.scss';
+@import '../../../../styles/variables/colors.scss';
+
+.app-footer {
+    width: 100%;
+    background-color: ghostwhite;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s background-color ease-in-out;
+    
+    &__socials {
+        display: flex;
+    }
+
+    &__social-link {
+        padding: 0 10px;
+    }
+
+    &__copy {
+        transition: 0.3s ease-in-out;
+    }
+}
+
+@include dark-theme('.app-footer') {
+    background-color: $dark-bg-color-1;
+    color: $dark-text-color-1;
+}
+
+@include light-theme('.app-footer') {
+    background-color: $white-bg-color-1;
+    color: $white-text-color-1;
+}

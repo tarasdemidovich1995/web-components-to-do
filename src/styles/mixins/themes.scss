@@ -1,0 +1,11 @@
+@mixin dark-theme($selector) {
+    body[data-theme="dark"] #{$selector} {
+        @content;
+    }
+}
+
+@mixin light-theme($selector) {
+    body[data-theme="white"] #{$selector} {
+        @content;
+    }
+}

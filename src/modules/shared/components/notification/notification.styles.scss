@@ -1,0 +1,32 @@
+@import '../../../../styles/variables/colors.scss';
+
+.notifications-host {
+    position: absolute;
+    width: 300px;
+    top: 40px;
+    right: 40px;
+}
+
+.notification {
+    width: 100%;
+    padding: 16px;
+    color: $color-white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    &.success {
+        background-color: $notification-success-color;
+    }
+
+    &.warning {
+        background-color: $notification-warning-color;
+    }
+
+    &.error {
+        background-color: $notification-error-color;
+    }
+}
