@@ -44,7 +44,7 @@ export class ToDoListComponent extends CustomElement {
     public initSubscriptions(): void {
         this.subscriptions.push(
             new Watcher(toDoService.$removeToDo, (id: string) => {
-                if (!toDoService.getList.length) {
+                if (!toDoService.getList().length) {
                     this.todos = [];
                     this.renderContent();
                 }

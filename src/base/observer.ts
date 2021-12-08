@@ -1,5 +1,3 @@
-import { log } from "console";
-
 export class Observer {
     private observers: ((...args: any[]) => void)[];
 

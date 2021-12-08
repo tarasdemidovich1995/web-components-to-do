@@ -42,7 +42,6 @@ export class App {
                 <app-footer></app-footer>
             </div>
         `;
-        this.initGlobalEventHandlers();
     }
     
     public static initGlobalEventHandlers(): void {
